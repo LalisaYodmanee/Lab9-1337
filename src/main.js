@@ -1,28 +1,34 @@
-import { createApp } from "vue";
-import { createPinia } from "pinia";
-// firebase
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+import App from './App.vue'
+import router from './router'
+ 
+import './assets/main.css'
+
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-
-import App from "./App.vue";
-import router from "./router";
-
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD3iqTnwoTwraK5H2S_SaDTic-UJl8GMDI",
-  authDomain: "csmju-8424c.firebaseapp.com",
-  projectId: "csmju-8424c",
-  storageBucket: "csmju-8424c.appspot.com",
-  messagingSenderId: "445155589037",
-  appId: "1:445155589037:web:c4c2beaff9008e06f07f24",
-  measurementId: "G-WJ28Y8FYT1",
+  apiKey: "AIzaSyBvsLhg47V8Dg2B_MedzDyROhv3E0jldZY",
+  authDomain: "lab9-1337.firebaseapp.com",
+  projectId: "lab9-1337",
+  storageBucket: "lab9-1337.appspot.com",
+  messagingSenderId: "1030824969480",
+  appId: "1:1030824969480:web:ba4cc423974624d85c58bd"
 };
 
+// Initialize Firebase
 const initfirestore = initializeApp(firebaseConfig);
 export const db = getFirestore(initfirestore);
 const app = createApp(App);
 
-app.use(createPinia());
-app.use(router);
 
-app.mount("#app");
+app.use(createPinia())
+app.use(router)
+
+app.mount('#app')
